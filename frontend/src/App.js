@@ -9,14 +9,15 @@ const { ethers } = require("ethers");
 
 
 function App() {
-  const owneraddress = process.env.OWNER_ADDRESS;
+  let owneraddress = "00"
+  //process.env.REACT_APP_OWNER_ADDRESS;
   let provider;
+  console.log(owneraddress);
   const[address,setAddress] = useState('');
   const [isAddress, setIsAddress] = useState(false);
   const[Balance, setBalance] = useState('0');
   const [BalanceString,setBalancestring] = useState('');
   const [formDetails, setFormDetails] = useState({ amount: 1 });
-
   const changeHandler = (event) => {
     let name = event.target.name;
     setFormDetails((prev) => {

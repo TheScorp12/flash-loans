@@ -1,7 +1,7 @@
 import json from "./FlashLoan.json";
 const { ethers, toNumber } = require("ethers");
 
-const DEPLOYED_CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
+const DEPLOYED_CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 async function getAbi() {
   // const data = await fsPromises.readFile(ABI_FILE_PATH, 'utf8');
   const abi = json.abi;
@@ -16,7 +16,7 @@ async function getbalance(signer) {
   //   );
   // const provider = new ethers.BrowserProvider(window.ethereum);
   // const signer = await provider.getSigner();
-
+console.log(DEPLOYED_CONTRACT_ADDRESS);
   const flashloancontract = new ethers.Contract(
     DEPLOYED_CONTRACT_ADDRESS,
     abi,
